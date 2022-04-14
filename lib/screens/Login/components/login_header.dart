@@ -6,7 +6,7 @@ class LoginHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
+        padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 0),
         child: Row(
           children: const [
             Text('Đăng nhập',

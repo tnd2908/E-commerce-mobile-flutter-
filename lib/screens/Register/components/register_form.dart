@@ -2,25 +2,52 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_project/constants/colors.dart';
-import 'package:flutter_project/screens/Register/retister.dart';
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({Key? key}) : super(key: key);
+class RegisterForm extends StatefulWidget {
+  const RegisterForm({Key? key}) : super(key: key);
 
   @override
+  State<RegisterForm> createState() => _RegisterFormState();
+}
+
+class _RegisterFormState extends State<RegisterForm> {
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width,
+    return Padding(
       padding: const EdgeInsets.all(25),
       child: Form(
         child: Column(
           children: [
+            const Text('Đăng ký tài khoản', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 30),
             Container(
                 color: const Color(0xFFF6F5F5),
                 child: TextFormField(
                   decoration: const InputDecoration(
                       border: InputBorder.none,
-                      hintText: 'Enter your username',
+                      hintText: 'Enter your name',
+                      prefixIcon: Icon(Icons.person)),
+                )),
+            const SizedBox(
+              height: 15,
+            ),
+            Container(
+                color: const Color(0xFFF6F5F5),
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Enter your phone number',
+                      prefixIcon: Icon(Icons.phone)),
+                )),
+            const SizedBox(
+              height: 15,
+            ),
+            Container(
+                color: const Color(0xFFF6F5F5),
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Enter your email',
                       prefixIcon: Icon(Icons.mail_outline)),
                 )),
             const SizedBox(
@@ -34,15 +61,6 @@ class LoginForm extends StatelessWidget {
                       hintText: 'Enter your password',
                       prefixIcon: Icon(Icons.lock_outline)),
                 )),
-            const SizedBox(height: 10),
-            Row(
-              children: [
-                GestureDetector(
-                  child: Text('Quên mật khẩu',
-                      style: TextStyle(color: AppColors.lightColor)),
-                ),
-              ],
-            ),
             const SizedBox(height: 15),
             FlatButton(
                 color: AppColors.primaryColor,
@@ -50,26 +68,15 @@ class LoginForm extends StatelessWidget {
                 onPressed: () {},
                 minWidth: MediaQuery.of(context).size.width,
                 height: 50,
-                child: const Text('Đăng nhập'),
+                child: const Text('Đăng ký'),
                 shape: RoundedRectangleBorder(
                   side: BorderSide(
                     width: 0,
                     style: BorderStyle.solid,
                     color: AppColors.primaryColor,
                   ),
+                  borderRadius: BorderRadius.circular(4)
                 )),
-            const SizedBox(height: 20),
-            Row(children: [
-              Text('Chưa có tải khoản? ',
-                  style: TextStyle(color: AppColors.lightColor)),
-              GestureDetector(
-                child: Text(' Đăng ký ngay',
-                    style: TextStyle(color: AppColors.primaryColor)),
-                    onTap: () {
-                      Navigator.pushNamed(context, RegisterScreen.routeName);
-                    },
-              ),
-            ]),
           ],
         ),
       ),
