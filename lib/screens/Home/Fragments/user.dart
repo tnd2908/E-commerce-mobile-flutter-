@@ -12,28 +12,37 @@ class UserFragment extends StatelessWidget {
     // ignore: sized_box_for_whitespace
     return Container(
         width: MediaQuery.of(context).size.width,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Vui lòng đăng nhập để sử dụng tính năng này'),
-            const SizedBox(height: 30),
-            FlatButton(
-                color: AppColors.primaryColor,
-                textColor: Colors.white,
-                onPressed: () {
-                  Navigator.pushNamed(context, LoginScreen.routeName);
-                },
-                minWidth: MediaQuery.of(context).size.width - 60,
-                height: 50,
-                child: const Text('Đăng nhập'),
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(
-                    width: 0,
-                    style: BorderStyle.solid,
-                    color: AppColors.primaryColor,
-                  ),
-                )),
-          ],
+        height: 400,
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          padding: const EdgeInsets.all(8.0),
+          decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(15)),
+              color: Colors.white,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Vui lòng đăng nhập để sử dụng tính năng này'),
+              const SizedBox(height: 30),
+              FlatButton(
+                  color: AppColors.primaryColor,
+                  textColor: Colors.white,
+                  onPressed: () {
+                    Navigator.pushNamed(context, LoginScreen.routeName);
+                  },
+                  minWidth: MediaQuery.of(context).size.width - 60,
+                  height: 50,
+                  child: const Text('Đăng nhập'),
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(
+                      width: 0,
+                      style: BorderStyle.solid,
+                      color: AppColors.primaryColor,
+                    ),
+                  )),
+            ],
+          ),
         ));
   }
 }
