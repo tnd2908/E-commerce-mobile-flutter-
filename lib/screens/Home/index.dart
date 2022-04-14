@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/screens/Home/Fragments/category.dart';
 import 'package:flutter_project/screens/Home/Fragments/home.dart';
 import 'package:flutter_project/screens/Home/Fragments/user.dart';
-import 'package:flutter_project/screens/Login/login.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key, required this.title}) : super(key: key);
@@ -15,11 +14,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
-  List fragments = const [
-      HomeFragment(),
-      CategoryFragment(),
-      UserFragment()
-  ];
+  List fragments = const [HomeFragment(), CategoryFragment(), UserFragment()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
         animationDuration: const Duration(milliseconds: 200),
         onTap: (index) {
           setState(() {
-            currentIndex = index ;
+            currentIndex = index;
           });
         },
       ),
