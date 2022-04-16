@@ -21,7 +21,8 @@ class LoginScreen extends StatelessWidget {
           },
         ),
         centerTitle: true,
-        title: const Text('Đăng nhập', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        title: const Text('Đăng nhập',
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
         backgroundColor: AppColors.primaryColor,
       ),
       body: SafeArea(
@@ -37,11 +38,11 @@ class LoginScreen extends StatelessWidget {
                     SizedBox(height: 130),
                     Padding(
                       padding: EdgeInsets.all(16),
-                      child: Text('Welcome back!',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30,
-                              color: Colors.white)),
+                      // child: Text('Welcome back!',
+                      //     style: TextStyle(
+                      //         fontWeight: FontWeight.bold,
+                      //         fontSize: 30,
+                      //         color: Colors.white)),
                     )
                   ],
                 ),

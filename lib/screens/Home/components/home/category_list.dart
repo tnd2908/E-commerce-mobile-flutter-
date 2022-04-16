@@ -8,7 +8,7 @@ class CateGories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+      margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
       padding: const EdgeInsets.all(16),
       width: MediaQuery.of(context).size.width,
       color: Colors.white,
