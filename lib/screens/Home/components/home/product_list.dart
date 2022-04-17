@@ -12,7 +12,6 @@ class ProductList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 10),
-      margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
       width: MediaQuery.of(context).size.width,
       color: Colors.white,
       child: Column(
@@ -20,25 +19,24 @@ class ProductList extends StatelessWidget {
         children: [
           Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
           SizedBox(
-              height: 230,
+              height: 250,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: list.length,
                 itemBuilder: (context, index) => Container(
-                  width: 125,
+                  width: 140,
                   clipBehavior: Clip.hardEdge,
                   decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(6)),
                       boxShadow: [
                         BoxShadow(
                           color: Color(0xfff6f6f6),
-                          spreadRadius: 5,
-                          blurRadius: 7,
+                          blurRadius: 3,
                           offset: Offset(0, 3),
                         ),
                       ]),
                   margin:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                      const EdgeInsets.symmetric(horizontal: 6, vertical: 10),
                   child: Container(
                     color: Colors.white,
                     padding: const EdgeInsets.all(8),
