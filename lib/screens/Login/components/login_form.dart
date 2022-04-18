@@ -45,17 +45,18 @@ class LoginForm extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             FlatButton(
-                color: AppColors.primaryColor,
+                color: AppColors.secondaryColor,
                 textColor: Colors.white,
                 onPressed: () {},
                 minWidth: MediaQuery.of(context).size.width,
-                height: 50,
+                height: 45,
                 child: const Text('Đăng nhập'),
                 shape: RoundedRectangleBorder(
+                  borderRadius: const BorderRadius.all(Radius.circular(4)),
                   side: BorderSide(
                     width: 0,
-                    style: BorderStyle.solid,
-                    color: AppColors.primaryColor,
+                    style: BorderStyle.none,
+                    color: AppColors.darkColor,
                   ),
                 )),
             const SizedBox(height: 20),
@@ -65,9 +66,9 @@ class LoginForm extends StatelessWidget {
               GestureDetector(
                 child: Text(' Đăng ký ngay',
                     style: TextStyle(color: AppColors.primaryColor)),
-                    onTap: () {
-                      Navigator.pushNamed(context, RegisterScreen.routeName);
-                    },
+                onTap: () {
+                  Navigator.pushNamed(context, RegisterScreen.routeName);
+                },
               ),
             ]),
           ],
