@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_project/constants/colors.dart';
+import 'package:flutter_project/screens/Cart/index.dart';
 import 'package:flutter_project/screens/Home/Fragments/cart.dart';
 import 'package:flutter_project/screens/Home/Fragments/category.dart';
 import 'package:flutter_project/screens/Home/Fragments/home.dart';
@@ -30,66 +31,37 @@ class _HomeScreenState extends State<HomeScreen> {
       extendBody: true,
       body: SafeArea(
         top: false,
-        child: CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              toolbarHeight: 90,
-              backgroundColor: Colors.white,
-              flexibleSpace: FlexibleSpaceBar(
-                title: SizedBox(
-                  height: 110,
-                  child: Column(children: [
-                    Image.asset('assets/images/logo-horizontal.png',
-                        height: 100),
-                  ]),
-                ),
-                centerTitle: true,
-              ),
-              pinned: true,
-              expandedHeight: 150,
-              bottom: PreferredSize(
-                preferredSize: const Size.fromHeight(10),
-                child: Container(
-                  margin: const EdgeInsets.fromLTRB(0, 40, 0, 0),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-                  height: 60,
-                  child: const TextField(
-                    selectionHeightStyle: BoxHeightStyle.includeLineSpacingTop,
-                    decoration: InputDecoration(
-                        isDense: true,
-                        contentPadding: EdgeInsets.all(8),
-                        border: OutlineInputBorder(borderSide: BorderSide.none),
-                        filled: true,
-                        fillColor: Color(0xFFf6f6f6),
-                        hintText: "Search product",
-                        prefixIcon: Icon(
-                          Icons.search,
-                          color: Colors.black,
-                        )),
-                  ),
-                ),
-              ),
-            ),
-            SliverList(
-                delegate: SliverChildListDelegate([fragments[currentIndex]])),
-          ],
+        child: SingleChildScrollView(
+          child: fragments[currentIndex],
         ),
       ),
-      // appBar: AppBar(
-      //   backgroundColor: AppColors.primaryColor,
-      //   elevation: 0,
-      //   title: Image.asset(
-      //         'assets/images/logo-horizontal-solid.png',
-      //         height: 130,
-      //       ),,
-      //   centerTitle: false,
-      // ),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.notifications_outlined, color: Colors.white),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, CartScreen.routeName);
+            },
+            icon: const Icon(Icons.shopping_bag_outlined, color: Colors.white),
+          ),
+          const SizedBox(width: 10)
+        ],
+        backgroundColor: AppColors.primaryColor,
+        title: Image.asset(
+              'assets/images/logo-horizontal-solid.png',
+              height: 105,
+            ),
+        centerTitle: false,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         currentIndex: currentIndex,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: AppColors.primaryColor,
+        unselectedItemColor: const Color(0xFFBFBFBF),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -100,8 +72,8 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'Favorite',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: 'Notification',
+            icon: Icon(Icons.search),
+            label: 'Search',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
