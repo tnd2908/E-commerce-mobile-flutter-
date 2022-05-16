@@ -13,13 +13,14 @@ class RegisterForm extends StatefulWidget {
 class _RegisterFormState extends State<RegisterForm> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.all(25),
       child: Form(
         child: Column(
           children: [
-            const Text('Đăng ký tài khoản', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 30),
+            // const Text('Đăng ký tài khoản',
+            //     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            // const SizedBox(height: 30),
             Container(
                 color: const Color(0xFFF6F5F5),
                 child: TextFormField(
@@ -70,13 +71,12 @@ class _RegisterFormState extends State<RegisterForm> {
                 height: 50,
                 child: const Text('Đăng ký'),
                 shape: RoundedRectangleBorder(
-                  side: BorderSide(
-                    width: 0,
-                    style: BorderStyle.solid,
-                    color: AppColors.primaryColor,
-                  ),
-                  borderRadius: BorderRadius.circular(4)
-                )),
+                    side: BorderSide(
+                      width: 0,
+                      style: BorderStyle.solid,
+                      color: AppColors.primaryColor,
+                    ),
+                    borderRadius: BorderRadius.circular(4))),
           ],
         ),
       ),

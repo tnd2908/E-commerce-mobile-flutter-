@@ -34,15 +34,17 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
-                  children: const [
-                    SizedBox(height: 130),
-                    Padding(
-                      padding: EdgeInsets.all(16),
-                      // child: Text('Welcome back!',
-                      //     style: TextStyle(
-                      //         fontWeight: FontWeight.bold,
-                      //         fontSize: 30,
-                      //         color: Colors.white)),
+                  children: [
+                    const SizedBox(height: 130),
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      width: MediaQuery.of(context).size.width,
+                      child: const Text('Chào mừng bạn quay trở lại!',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30,
+                              color: Colors.white)),
                     )
                   ],
                 ),

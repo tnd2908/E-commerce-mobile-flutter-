@@ -6,15 +6,10 @@ class LoginHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 0),
-        child: Row(
-          children: const [
-            Text('Đăng nhập',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20)),
-          ],
-        ));
+      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 0),
+      child: const Text('Đăng nhập',
+          style: TextStyle(
+              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20)),
+    );
   }
 }

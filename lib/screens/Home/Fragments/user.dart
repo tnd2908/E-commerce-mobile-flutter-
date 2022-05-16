@@ -12,13 +12,13 @@ class UserFragment extends StatelessWidget {
     // ignore: sized_box_for_whitespace
     return Container(
         width: MediaQuery.of(context).size.width,
-        height: 400,
+        height: MediaQuery.of(context).size.height - 300,
         padding: const EdgeInsets.all(8.0),
         child: Container(
           padding: const EdgeInsets.all(8.0),
           decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(15)),
-              color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(15)),
+            color: Colors.white,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

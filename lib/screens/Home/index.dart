@@ -28,63 +28,48 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: const Color(0xffeeeeee),
       extendBody: true,
-      body: SafeArea(
-        top: false,
-        child: CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              toolbarHeight: 90,
-              backgroundColor: Colors.white,
-              flexibleSpace: FlexibleSpaceBar(
-                title: SizedBox(
-                  height: 110,
-                  child: Column(children: [
-                    Image.asset('assets/images/logo-horizontal.png',
-                        height: 100),
-                  ]),
-                ),
-                centerTitle: true,
-              ),
-              pinned: true,
-              expandedHeight: 150,
-              bottom: PreferredSize(
-                preferredSize: const Size.fromHeight(10),
-                child: Container(
-                  margin: const EdgeInsets.fromLTRB(0, 40, 0, 0),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-                  height: 60,
-                  child: const TextField(
-                    selectionHeightStyle: BoxHeightStyle.includeLineSpacingTop,
-                    decoration: InputDecoration(
-                        isDense: true,
-                        contentPadding: EdgeInsets.all(8),
-                        border: OutlineInputBorder(borderSide: BorderSide.none),
-                        filled: true,
-                        fillColor: Color(0xFFf6f6f6),
-                        hintText: "Search product",
-                        prefixIcon: Icon(
-                          Icons.search,
-                          color: Colors.black,
-                        )),
-                  ),
-                ),
-              ),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.shopping_bag),
+              iconSize: 30,
+              color: Colors.white),
+          const SizedBox(width: 20)
+        ],
+        toolbarHeight: 100,
+        backgroundColor: AppColors.primaryColor,
+        title:
+            Image.asset('assets/images/logo-horizontal-solid.png', height: 130),
+        centerTitle: false,
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(10),
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+            height: 60,
+            child: const TextField(
+              selectionHeightStyle: BoxHeightStyle.includeLineSpacingTop,
+              decoration: InputDecoration(
+                  isDense: true,
+                  contentPadding: EdgeInsets.all(8),
+                  border: OutlineInputBorder(borderSide: BorderSide.none),
+                  filled: true,
+                  fillColor: Color(0xFFE06C6C),
+                  hintText: "Tìm kiếm",
+                  hintStyle: TextStyle(color: Color(0xFFF6F6F6)),
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: Colors.white,
+                  )),
             ),
-            SliverList(
-                delegate: SliverChildListDelegate([fragments[currentIndex]])),
-          ],
+          ),
         ),
       ),
-      // appBar: AppBar(
-      //   backgroundColor: AppColors.primaryColor,
-      //   elevation: 0,
-      //   title: Image.asset(
-      //         'assets/images/logo-horizontal-solid.png',
-      //         height: 130,
-      //       ),,
-      //   centerTitle: false,
-      // ),
+      body: SafeArea(
+          top: false,
+          child: SingleChildScrollView(
+            child: fragments[currentIndex],
+          )),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         currentIndex: currentIndex,
@@ -93,19 +78,19 @@ class _HomeScreenState extends State<HomeScreen> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'Trang chủ',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.list_alt_outlined),
+            label: 'Sản phẩm',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
-            label: 'Favorite',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: 'Notification',
+            label: 'Yêu thích',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
-            label: 'Account',
+            label: 'Tài khoản',
           ),
         ],
         onTap: (index) {

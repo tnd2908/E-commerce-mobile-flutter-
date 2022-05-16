@@ -38,7 +38,7 @@ class LoginForm extends StatelessWidget {
             Row(
               children: [
                 GestureDetector(
-                  child: Text('Quên mật khẩu',
+                  child: Text('Quên mật khẩu?',
                       style: TextStyle(color: AppColors.lightColor)),
                 ),
               ],
