@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/providers/cart_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter_project/route/index.dart';
 import 'package:flutter_project/screens/Home/index.dart';
 
-void main() {
-  runApp(const MyApp());
+void main(List<String> args) {
+  runApp(MultiProvider(
+    providers: [ChangeNotifierProvider(create: (_) => CartProvider())],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -23,4 +28,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

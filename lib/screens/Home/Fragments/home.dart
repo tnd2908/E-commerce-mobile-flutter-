@@ -17,7 +17,7 @@ class HomeFragment extends StatelessWidget {
           children: [
             const CateGories(),
             const EventList(),
-            ProductList(list: productList, title: 'Sản phẩm mới'),
+            ProductList(list: List.from(productList), title: 'Sản phẩm mới'),
             ProductList(
                 list: List.from(productList.reversed), title: 'Bán chạy'),
             const BrandList(),

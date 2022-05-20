@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_project/constants/colors.dart';
+import 'package:flutter_project/screens/Cart/index.dart';
 import 'package:flutter_project/screens/Home/Fragments/cart.dart';
 import 'package:flutter_project/screens/Home/Fragments/category.dart';
 import 'package:flutter_project/screens/Home/Fragments/home.dart';
@@ -31,7 +32,9 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, CartScreen.routeName);
+              },
               icon: const Icon(Icons.shopping_bag),
               iconSize: 30,
               color: Colors.white),
@@ -75,6 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
         currentIndex: currentIndex,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: AppColors.primaryColor,
+        unselectedItemColor: const Color(0xFFBFBFBF),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

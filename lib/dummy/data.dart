@@ -57,19 +57,19 @@ List event = [
 ];
 List<Product> productList = [
   Product(
-      id: 0,
+      id: '0',
       name: 'iPhone 13 Pro Max 256Gb',
       price: 33990000,
       image:
           'https://cdn.tgdd.vn/Products/Images/42/230521/iphone-13-pro-sierra-blue-600x600.jpg'),
   Product(
-      id: 0,
+      id: '1',
       name: 'iPhone 13 Pro 512Gb',
       price: 33990000,
       image:
           'https://cdn.tgdd.vn/Products/Images/42/223602/iphone-13-midnight-2-600x600.jpg'),
   Product(
-      id: 0,
+      id: '2',
       name: 'iPhone 13 Pro 256Gb',
       price: 33990000,
       image:
