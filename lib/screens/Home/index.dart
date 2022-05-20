@@ -26,48 +26,29 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   @override
   Widget build(BuildContext context) {
+    String getTitle() {
+      switch (currentIndex) {
+        case 1:
+          return 'Sản phẩm';
+        case 2:
+          return 'Yêu Thích';
+        case 3:
+          return 'Tài khoản';
+        default:
+          return '';
+      }
+    }
+
     return Scaffold(
       backgroundColor: const Color(0xffeeeeee),
       extendBody: true,
-      appBar: AppBar(
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.pushNamed(context, CartScreen.routeName);
-              },
-              icon: const Icon(Icons.shopping_bag),
-              iconSize: 30,
-              color: Colors.white),
-          const SizedBox(width: 20)
-        ],
-        toolbarHeight: 100,
-        backgroundColor: AppColors.primaryColor,
-        title:
-            Image.asset('assets/images/logo-horizontal-solid.png', height: 130),
-        centerTitle: false,
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(10),
-          child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-            height: 60,
-            child: const TextField(
-              selectionHeightStyle: BoxHeightStyle.includeLineSpacingTop,
-              decoration: InputDecoration(
-                  isDense: true,
-                  contentPadding: EdgeInsets.all(8),
-                  border: OutlineInputBorder(borderSide: BorderSide.none),
-                  filled: true,
-                  fillColor: Color(0xFFE06C6C),
-                  hintText: "Tìm kiếm",
-                  hintStyle: TextStyle(color: Color(0xFFF6F6F6)),
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: Colors.white,
-                  )),
+      appBar: currentIndex == 0
+          ? mainAppBar(context)
+          : AppBar(
+              title:
+                  Text(getTitle(), style: const TextStyle(color: Colors.white)),
+              backgroundColor: AppColors.primaryColor,
             ),
-          ),
-        ),
-      ),
       body: SafeArea(
           top: false,
           child: SingleChildScrollView(
@@ -102,6 +83,48 @@ class _HomeScreenState extends State<HomeScreen> {
             currentIndex = index;
           });
         },
+      ),
+    );
+  }
+
+  AppBar mainAppBar(BuildContext context) {
+    return AppBar(
+      actions: [
+        IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, CartScreen.routeName);
+            },
+            icon: const Icon(Icons.shopping_bag_outlined),
+            iconSize: 30,
+            color: Colors.white),
+        const SizedBox(width: 20)
+      ],
+      toolbarHeight: 100,
+      backgroundColor: AppColors.primaryColor,
+      title:
+          Image.asset('assets/images/logo-horizontal-solid.png', height: 130),
+      centerTitle: false,
+      bottom: PreferredSize(
+        preferredSize: const Size.fromHeight(10),
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+          height: 60,
+          child: const TextField(
+            selectionHeightStyle: BoxHeightStyle.includeLineSpacingTop,
+            decoration: InputDecoration(
+                isDense: true,
+                contentPadding: EdgeInsets.all(8),
+                border: OutlineInputBorder(borderSide: BorderSide.none),
+                filled: true,
+                fillColor: Color(0xFFE06C6C),
+                hintText: "Tìm kiếm",
+                hintStyle: TextStyle(color: Color(0xFFF6F6F6)),
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: Colors.white,
+                )),
+          ),
+        ),
       ),
     );
   }

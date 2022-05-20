@@ -8,9 +8,14 @@ import 'package:flutter_project/screens/Cart/components/cart_list.dart';
 import 'package:flutter_project/screens/Cart/components/payment_info.dart';
 import 'package:provider/provider.dart';
 
-class CartScreenBody extends StatelessWidget {
+class CartScreenBody extends StatefulWidget {
   const CartScreenBody({Key? key}) : super(key: key);
 
+  @override
+  State<CartScreenBody> createState() => _CartScreenBodyState();
+}
+
+class _CartScreenBodyState extends State<CartScreenBody> {
   @override
   Widget build(BuildContext context) {
     List<Cart> list = context.watch<CartProvider>().cart;

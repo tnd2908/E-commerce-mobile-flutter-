@@ -70,6 +70,36 @@ List<Product> productList = [
           'https://cdn.tgdd.vn/Products/Images/42/223602/iphone-13-midnight-2-600x600.jpg'),
   Product(
       id: '2',
+      name: 'Laptop Lenovo Yoga 9',
+      price: 36990000,
+      image:
+          'https://cdn.tgdd.vn/Products/Images/44/239233/lenovo-yoga-9-14itl5-i7-82bg006evn-21-600x600.jpg'),
+  Product(
+      id: '3',
+      name: 'Samsung Galaxy Tab A8 Lite ',
+      price: 4990000,
+      image:
+          'https://cdn.tgdd.vn/Products/Images/522/205751/samsung-galaxy-tab-a8-t295-2019-black-1-600x600.jpg'),
+  Product(
+      id: '4',
+      name: 'Samsung Galaxy Z Flip3 5G 256GB',
+      price: 28990000,
+      image:
+          'https://cdn.tgdd.vn/Products/Images/42/281366/Samsung-Galaxy-Z-Flip-3-600x600.jpg'),
+  Product(
+      id: '5',
+      name: 'Samsung Galaxy Z Fold3 5G',
+      price: 36990000,
+      image:
+          'https://cdn.tgdd.vn/Products/Images/42/226935/samsung-galaxy-z-fold-3-silver-1-600x600.jpg'),
+  Product(
+      id: '6',
+      name: 'Laptop Acer Nitro 5 Gaming',
+      price: 26390000,
+      image:
+          'https://cdn.tgdd.vn/Products/Images/44/247312/acer-nitro-5-gaming-an515-57-5831-i5-nhqdgsv003-600x600.jpg'),
+  Product(
+      id: '7',
       name: 'iPhone 13 Pro 256Gb',
       price: 33990000,
       image:

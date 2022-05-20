@@ -12,7 +12,8 @@ class CartProvider extends ChangeNotifier {
   }
 
   void addToCart(Product product) {
-    if (cart.isEmpty) {
+    var exist = cart.where((element) => element.id == product.id);
+    if (exist.isEmpty) {
       cart.add(Cart(
           id: product.id,
           name: product.name,
@@ -21,20 +22,9 @@ class CartProvider extends ChangeNotifier {
           totalQuantity: 10,
           quantity: 1));
     } else {
-      var exist = cart.where((element) => element.id == product.id);
-      if (exist.isEmpty) {
-        cart.add(Cart(
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            image: product.image,
-            totalQuantity: 10,
-            quantity: 1));
-      } else {
-        for (var element in cart) {
-          if (element.id == product.id) {
-            element.quantity = element.quantity + 1;
-          }
+      for (var element in cart) {
+        if (element.id == product.id) {
+          element.quantity = element.quantity + 1;
         }
       }
     }

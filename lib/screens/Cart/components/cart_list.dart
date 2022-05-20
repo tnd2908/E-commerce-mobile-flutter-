@@ -21,7 +21,7 @@ class _CartListState extends State<CartList> {
     List<Cart> list = context.watch<CartProvider>().cart;
     return Container(
       padding: const EdgeInsets.all(10),
-      height: list.length * 120,
+      height: list.length * 140,
       constraints: const BoxConstraints(maxHeight: 450),
       child: ListView.separated(
           itemCount: list.length,
@@ -33,7 +33,7 @@ class _CartListState extends State<CartList> {
                   child: Container(
                     padding:
                         const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-                    height: 100,
+                    height: 120,
                     width: MediaQuery.of(context).size.width,
                     child: Row(
                       children: [

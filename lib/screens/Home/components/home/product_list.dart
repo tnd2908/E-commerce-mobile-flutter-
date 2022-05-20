@@ -50,23 +50,27 @@ class ProductList extends StatelessWidget {
                       color: Colors.white,
                       padding: const EdgeInsets.all(8),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
                             child: Image.network(list[index].image),
                             margin: const EdgeInsets.fromLTRB(0, 10, 0, 15),
                           ),
-                          Text(
-                            list[index].name,
-                          ),
-                          const SizedBox(height: 5),
-                          Text(
-                              NumberFormat.currency(locale: 'vi_VN')
-                                  .format(list[index].price)
-                                  .toString(),
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold))
+                          Column(
+                            children: [
+                              Text(
+                                list[index].name,
+                              ),
+                              const SizedBox(height: 5),
+                              Text(
+                                  NumberFormat.currency(locale: 'vi_VN')
+                                      .format(list[index].price)
+                                      .toString(),
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold))
+                            ],
+                          )
                         ],
                       ),
                     ),
