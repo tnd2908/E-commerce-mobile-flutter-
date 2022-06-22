@@ -72,7 +72,7 @@ class CategoryFragment extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            child: Image.network(productList[index].image,
+                            child: Image.network(productList[index].images[0],
                                 width: 120),
                             margin: const EdgeInsets.fromLTRB(0, 10, 0, 15),
                           ),

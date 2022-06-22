@@ -11,6 +11,14 @@ class RegisterForm extends StatefulWidget {
 }
 
 class _RegisterFormState extends State<RegisterForm> {
+  var email = TextEditingController();
+  var password = TextEditingController();
+  var fullName = TextEditingController();
+  var phone = TextEditingController();
+
+  void onSubmit() {
+    print({ 'name': fullName.text});
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,6 +32,7 @@ class _RegisterFormState extends State<RegisterForm> {
             Container(
                 color: const Color(0xFFF6F5F5),
                 child: TextFormField(
+                  controller: fullName,
                   decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Enter your name',
@@ -35,6 +44,7 @@ class _RegisterFormState extends State<RegisterForm> {
             Container(
                 color: const Color(0xFFF6F5F5),
                 child: TextFormField(
+                  controller: phone,
                   decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Enter your phone number',
@@ -46,6 +56,7 @@ class _RegisterFormState extends State<RegisterForm> {
             Container(
                 color: const Color(0xFFF6F5F5),
                 child: TextFormField(
+                  controller: email,
                   decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Enter your email',
@@ -57,6 +68,7 @@ class _RegisterFormState extends State<RegisterForm> {
             Container(
                 color: const Color(0xFFF6F5F5),
                 child: TextFormField(
+                  controller: password,
                   decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Enter your password',
@@ -66,7 +78,9 @@ class _RegisterFormState extends State<RegisterForm> {
             FlatButton(
                 color: AppColors.primaryColor,
                 textColor: Colors.white,
-                onPressed: () {},
+                onPressed: () {
+                  onSubmit();
+                },
                 minWidth: MediaQuery.of(context).size.width,
                 height: 50,
                 child: const Text('Đăng ký'),

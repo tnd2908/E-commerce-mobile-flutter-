@@ -1,7 +1,8 @@
 class Categories {
-  int id;
+  String id;
   String name;
-  String image;
+  String icon;
+  String type;
 
-  Categories({required this.id, required this.name, required this.image});
+  Categories({required this.id, required this.name, required this.icon, required this.type});
 }

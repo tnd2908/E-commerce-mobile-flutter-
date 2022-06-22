@@ -34,7 +34,7 @@ class CateGories extends StatelessWidget {
                       children: [
                         Container(
                           child:
-                              Image.network(item.image, width: 35, height: 35),
+                              Image.network(item.icon, width: 35, height: 35),
                           margin: const EdgeInsets.fromLTRB(0, 0, 0, 5),
                         ),
                         Text(item.name, style: const TextStyle(fontSize: 8))

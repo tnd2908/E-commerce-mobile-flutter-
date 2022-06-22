@@ -36,7 +36,7 @@ class DetailScreen extends StatelessWidget {
                         width: MediaQuery.of(context).size.width,
                         color: Colors.white,
                         child: Image.network(
-                          product.image,
+                          product.images[0],
                           height: 250,
                         ),
                       ),

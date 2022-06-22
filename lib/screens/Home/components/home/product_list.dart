@@ -54,7 +54,7 @@ class ProductList extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            child: Image.network(list[index].image),
+                            child: Image.network(list[index].images[0]),
                             margin: const EdgeInsets.fromLTRB(0, 10, 0, 15),
                           ),
                           Column(

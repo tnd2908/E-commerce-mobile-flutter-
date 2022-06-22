@@ -18,8 +18,8 @@ class CartProvider extends ChangeNotifier {
           id: product.id,
           name: product.name,
           price: product.price,
-          image: product.image,
-          totalQuantity: 10,
+          image: product.images[0],
+          totalQuantity: product.totalQuantity,
           quantity: 1));
     } else {
       for (var element in cart) {
