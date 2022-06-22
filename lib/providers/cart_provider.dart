@@ -6,14 +6,14 @@ class CartProvider extends ChangeNotifier {
   List<Cart> cart = [];
   double totalPrice = 0;
   void setTotal() {
+    totalPrice = 0;
     for (var element in cart) {
-      totalPrice = element.price * element.quantity;
+      totalPrice = totalPrice + element.price * element.quantity;
     }
   }
-
   void addToCart(Product product) {
-    var exist = cart.where((element) => element.id == product.id);
-    if (exist.isEmpty) {
+    var currentCart = cart.where((element) => element.id == product.id);
+    if (currentCart.isEmpty) {
       cart.add(Cart(
           id: product.id,
           name: product.name,

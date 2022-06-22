@@ -37,7 +37,7 @@ class _CartListState extends State<CartList> {
                     width: MediaQuery.of(context).size.width,
                     child: Row(
                       children: [
-                        Image.network(list[index].image, height: 80),
+                        Image.network(list[index].image, height: 80, width: 100,),
                         Expanded(
                             child: Container(
                                 padding:

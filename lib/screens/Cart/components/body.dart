@@ -44,8 +44,8 @@ class _CartScreenBodyState extends State<CartScreenBody> {
       height: MediaQuery.of(context).size.height,
       child: Column(
         children: [
-          Image.network(
-              'https://cdn.dribbble.com/users/1097272/screenshots/10671922/empty_shoppin_bag_4x.png'),
+          Image.asset(
+              'assets/images/shopping_bag.png'),
           const SizedBox(height: 12),
           const Text('Giỏ hàng của bạn đang trống',
               style: TextStyle(fontSize: 20))
